@@ -1,8 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 import NavBar from './components/NavBar/NavBar';
-import NavBarMobile from './components/NavBar/NavBarMobile';
 import {
   Home,
   Category,
@@ -12,18 +11,12 @@ import {
   PageNotFound
 } from './container';
 import UntouchableView from './DeviceDetect/UntouchableView';
-import TouchableView from './DeviceDetect/TouchableView';
 
 
 function App() {
   return (
     <div>
-      <UntouchableView>
         <NavBar />
-      </UntouchableView>
-      <TouchableView>
-        <NavBarMobile />
-      </TouchableView>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/Categories/:Name' element={<Category />} />
@@ -33,7 +26,11 @@ function App() {
         </Route>
         <Route path='*' element={<PageNotFound />} />
       </Routes>
-      <Footer />
+
+      <UntouchableView>
+        <Footer />
+      </UntouchableView>
+
     </div>
   );
 }
