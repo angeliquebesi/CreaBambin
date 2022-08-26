@@ -19,7 +19,7 @@ function App() {
         <NavBar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/Categories/:Name' element={<Category />} />
+        <Route path='/Categories' element={<Category />} />
         <Route path='/Contact' element={<Contact />} />
         <Route path='/Login' element={<Login />}>
           <Route path=':admin' element={<Admin />} />
